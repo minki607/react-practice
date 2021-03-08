@@ -1,61 +1,59 @@
-(function utils(Euid) {
-  'use strict';
 
   /* -------------------------------------------------------------------------- */
   // 타입 검사 유틸리티
 
-  var typeIs = function (data) {
+  export const typeIs = (data) => {
     return Object.prototype.toString.call(data).slice(8, -1).toLowerCase();
   };
 
-  var isNumber = function (data) {
+  export const isNumber = (data) => {
     return typeIs(data) === 'number';
   };
 
-  var isString = function (data) {
+  export const isString = (data) => {
     return typeIs(data) === 'string';
   };
 
-  var isBoolean = function (data) {
+  export const isBoolean = (data) => {
     return typeIs(data) === 'boolean';
   };
 
-  var isFunction = function (data) {
+  export const isFunction = (data) => {
     return typeIs(data) === 'function';
   };
 
-  var isArray = function (data) {
+  export const isArray = (data) => {
     return typeIs(data) === 'array';
   };
 
-  var isObject = function (data) {
+  export const isObject = (data) => {
     return typeIs(data) === 'object';
   };
 
   /* -------------------------------------------------------------------------- */
   // 배열 유틸리티
 
-  var makeArray = function (likeArray) {
+  export const makeArray = (likeArray) => {
     return Array.prototype.slice.call(likeArray);
   };
 
   /* -------------------------------------------------------------------------- */
   // 시리얼라이즈 유틸리티
   
-  var serialize = function(data, prettiy) {
+  export const serialize = (data, prettiy) => {
     return !prettiy ? JSON.stringify(data) : JSON.stringify(data, null, 2) 
   }
 
-  var deserialize = function(json) {
+  export const deserialize = (json) => {
     return JSON.parse(json)
   }
 
   /* -------------------------------------------------------------------------- */
   // 믹스인 유틸리티
 
-  var mixins = function () {
-    return makeArray(arguments).reduce(function (o1, o2) {
-      for (var key in o2) {
+  export const mixins = (...args) => {
+    return makeArray(args).reduce((o1, o2) => {
+      for (let key in o2) {
         if (o2.hasOwnProperty(key)) {
           var o1Value = o1[key];
           var o2Value = o2[key];
@@ -76,9 +74,9 @@
     }, {});
   };
 
-  var _checkValueType = function(method, value, key) {
+  export const _checkValueType = (method, value, key) => {
     if (!method(value)) {
-      var message = '혼합할 각 객체 ' + key + ' 속성 유형이 다릅니다.';
+      const message = '혼합할 각 객체 ' + key + ' 속성 유형이 다릅니다.';
       if (Euid.logger) {
         Euid.logger.error(message)
       } else {
@@ -87,20 +85,3 @@
     }
   }
 
-  /* -------------------------------------------------------------------------- */
-  // 모듈 내보내기
-
-  Euid.utils = {
-    typeIs: typeIs,
-    isNumber: isNumber,
-    isString: isString,
-    isBoolean: isBoolean,
-    isFunction: isFunction,
-    isArray: isArray,
-    isObject: isObject,
-    makeArray: makeArray,
-    serialize: serialize,
-    deserialize: deserialize,
-    mixins: mixins,
-  };
-})(window.Euid = window.Euid || {});
