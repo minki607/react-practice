@@ -21,17 +21,13 @@ module.exports = {
         hot: true,
     },
 
+    // 모듈(규칙) - 로더 객체
     module: {
         rules: [
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                    },
-                },
+                test: /\.jsx?$/i,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
             },
         ],
     },

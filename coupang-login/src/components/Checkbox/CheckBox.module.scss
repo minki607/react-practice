@@ -1,0 +1,35 @@
+$dark-grey: #555555;
+
+.input {
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &:checked + .checkBox {
+    background-image: url("../../assets/ui-icons/checked.svg");
+  }
+}
+
+.inputLabel {
+  color: $dark-grey;
+  margin-left: 6px;
+}
+
+.checkBoxContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.checkBox {
+  width: 24px;
+  height: 26px;
+  padding: 0;
+  margin-top: 1px;
+  margin-right: 4px;
+  display: inline-block;
+  background: url("../../assets/ui-icons/checkbox.svg") no-repeat 50% 50%;
+}
