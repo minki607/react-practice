@@ -11,13 +11,12 @@ img::selection {
 }
 
 ::-webkit-scrollbar {
-  height: 7px;
-  background: #000;
+  height: 1px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
   height: 2px;
-  border-radius: 20px;
   background: #242424;
 
   &:hover {
@@ -33,10 +32,6 @@ img::selection {
 
 html {
   overflow-x: hidden;
-
-  @media (min-width: 40em) {
-    overflow-y: hidden;
-  }
 }
 
 body {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { string, number } from 'prop-types'
 import { img, loadingImg } from './LazyLoadingImg.module.scss'
 
 /* -------------------------------------------------------------------------- */
@@ -31,6 +31,7 @@ const PLACEHOLDER_IMAGE =
 
 export default function LazyLoadingImg({
   src,
+  size = 200,
   alt = '',
   className = '',
   placeholderImage = PLACEHOLDER_IMAGE,
@@ -81,6 +82,7 @@ export default function LazyLoadingImg({
     <img
       ref={imgRef}
       src={!isLoaded ? placeholderImage : src}
+      width={size}
       className={`${!isLoaded ? loadingImg : img} ${className}`.trim()}
       alt={alt}
       {...restProps}
@@ -92,6 +94,7 @@ export default function LazyLoadingImg({
 
 LazyLoadingImg.propTypes = {
   src: string.isRequired,
+  size: number,
   alt: string,
   className: string,
   placeholderImage: string,
