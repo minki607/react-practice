@@ -1,13 +1,19 @@
 @use 'styles/pages/config.scss' as *;
 
-.headline {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1024px;
-  transform: translate(-50%, -100%);
+.bookmarkPage {
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+}
 
-  font-size: 170px;
-  font-weight: 100;
-  color: $dark-gray;
+.headline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1024px;
+    transform: translate(-50%, -100%);
+
+    font-size: 170px;
+    font-weight: 100;
+    color: $dark-gray;
 }
