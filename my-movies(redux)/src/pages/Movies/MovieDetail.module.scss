@@ -8,7 +8,7 @@
 
 .videoTrailer {
   position: fixed;
-  z-index: -1;
+  z-index: -10;
   opacity: 0.7;
   top: 0;
   left: 0;
@@ -31,16 +31,18 @@ $shadow: 0 3px 4px rgba(0, 0, 0, 0.7);
 .poster {
   box-shadow: $shadow;
   height: 330px;
+  width: auto;
 }
 
 .headline {
-  border-bottom: 0px 5px 7px 3px rgb(0 0 0 / 70%);
   text-shadow: $shadow;
 }
 
 .title {
+  display: inline-flex;
   margin-top: 2rem;
   margin-bottom: 0;
+  margin-right: 5px;
   font-size: 32px;
 }
 
@@ -59,5 +61,28 @@ $shadow: 0 3px 4px rgba(0, 0, 0, 0.7);
 
 .button {
   color: $red;
-  
+}
+
+.mobileOnly {
+  margin-top: 120px;
+  margin-bottom: 0;
+
+  .poster {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .title {
+    margin-top: 2rem;
+    font-size: 26px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .overview {
+    font-size: 17px;
+  }
 }
