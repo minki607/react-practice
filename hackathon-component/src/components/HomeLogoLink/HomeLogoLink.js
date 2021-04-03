@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LogoText } from "./HomeLogoLink.module.scss";
+import { LogoText } from "./HomeLogoLink.styled";
 
 const HomeLogoLink = ({ children }) => {
   return (
@@ -9,7 +9,7 @@ const HomeLogoLink = ({ children }) => {
           pathname: "/",
         }}
       >
-        <span className={LogoText}>{children}</span>
+        <LogoText>{children}</LogoText>
       </Link>
     </h1>
   );

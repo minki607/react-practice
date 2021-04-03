@@ -1,18 +1,10 @@
-import {
-  inputContainer,
-  inputIconWrap,
-  input,
-  inputIcon,
-  resetIconBtn,
-} from "./Input.module.scss";
-
-import { a11yHidden } from "styles/modules/common.module.scss";
-
-import Icon from "components/Icon/Icon";
+import { bool, number, oneOfType, string } from "prop-types";
+import { StyledInput } from "./Input.styled";
 
 const Input = ({
   id,
   icon,
+  type = "text",
   name,
   label,
   placeholder,
@@ -30,15 +22,12 @@ const Input = ({
     width,
   };
   return (
-    <div className={inputContainer} style={customStyle}>
-      <label htmlFor={id} className={a11yHidden}>
-        {label}
-      </label>
-      <div className={inputIconWrap}>
-        <input
+    <StyledInput.Wrap style={customStyle}>
+      <StyledInput.Label htmlFor={id}>{label}</StyledInput.Label>
+      <StyledInput.IconWrap>
+        <StyledInput
           id={id}
-          name={name}
-          className={input}
+          type={type}
           placeholder={placeholder}
           disabled={disabled}
           style={{ textAlign: center ? "center" : "left" }}
@@ -47,21 +36,23 @@ const Input = ({
         />
 
         {icon && (
-          <>
-            <button className={resetIconBtn}>
-              <Icon type="reset" height={height - 25} />
-            </button>
-            <Icon
-              className={inputIcon}
-              height={height - 20}
-              type={icon}
-              alt={label}
-            />
-          </>
+          <StyledInput.Icon height={height - 20} type={icon} alt={label} />
         )}
-      </div>
-    </div>
+      </StyledInput.IconWrap>
+    </StyledInput.Wrap>
   );
+};
+
+Input.propTypes = {
+  id: string.isRequired,
+  icon: string,
+  type: string,
+  name: string,
+  placeholder: string,
+  width: oneOfType([string, number]),
+  height: oneOfType([string, number]),
+  disabled: bool,
+  center: bool,
 };
 
 export default Input;

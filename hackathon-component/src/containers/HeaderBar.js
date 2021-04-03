@@ -1,12 +1,12 @@
 import React from "react";
-import { header } from "./HeaderBar.module.scss";
 import Navigation from "components/Navigation/Navigation";
+import { Header } from "./HeaderBar.styled";
 
 const HeaderBar = () => {
   return (
-    <header className={header}>
+    <Header>
       <Navigation />
-    </header>
+    </Header>
   );
 };
 

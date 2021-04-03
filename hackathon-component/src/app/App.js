@@ -7,13 +7,17 @@ function App() {
     <div className="App">
       <HeaderBar />
       <Input
+        id="postSearch"
         icon="search"
+        type="search"
         placeholder="검색"
         label="검색"
         height={40}
         width={305}
       />
+
       <Input
+        id="setNickname"
         placeholder="닉네임 입력"
         label="닉네임"
         height={24}
