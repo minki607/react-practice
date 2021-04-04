@@ -1,0 +1,23 @@
+import Divider from 'components/Divider/Divider.styled'
+import Input from 'components/Input/Input'
+import PageContainer from 'containers/PageContainer/PageContainer.styled'
+import useDetectViewport from 'hooks/useDetectViewPort'
+import React from 'react'
+
+export const SearchPage = () => {
+    const { isMobile } = useDetectViewport()
+    return (
+        <PageContainer isMobile={isMobile}>
+            <Input
+                id="postSearch"
+                icon="search"
+                type="search"
+                placeholder="검색"
+                label="검색"
+                height={40}
+                width={305}
+            />
+            <Divider color="black" margin={20} height={3} width={245} />
+        </PageContainer>
+    )
+}

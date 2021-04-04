@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const LogoText = styled.span`
-  font-family: "MuseoModerno", cursive;
-  color: #000;
-`;
+    font-family: 'MuseoModerno', cursive;
+    color: var(--color-black);
+`
