@@ -7,7 +7,6 @@ import { useLocation } from 'react-router'
 const Navigation = () => {
     const location = useLocation()
     const { pathname } = location
-
     const { isMobile } = useDetectViewport()
     return (
         <Navbar center={isMobile}>

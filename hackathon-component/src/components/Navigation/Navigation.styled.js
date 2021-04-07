@@ -14,6 +14,12 @@ const Link = ({ children, to, ...restProps }) => {
 }
 
 export const Navbar = styled.nav`
+    z-index: 990;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
     font-size: 1em;
     flex: 1;
     align-self: flex-start;

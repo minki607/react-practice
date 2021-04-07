@@ -1,13 +1,19 @@
+import React from 'react'
 import Divider from 'components/Divider/Divider.styled'
 import Input from 'components/Input/Input'
 import PageContainer from 'containers/PageContainer/PageContainer.styled'
 import useDetectViewport from 'hooks/useDetectViewPort'
-import React from 'react'
+import { pageEffect } from 'styles/motions/variants'
 
 export const SearchPage = () => {
     const { isMobile } = useDetectViewport()
     return (
-        <PageContainer isMobile={isMobile}>
+        <PageContainer
+            variants={pageEffect}
+            initial="hidden"
+            animate="visible"
+            isMobile={isMobile}
+        >
             <Input
                 id="postSearch"
                 icon="search"

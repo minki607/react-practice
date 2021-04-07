@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components'
+import { motion } from 'framer-motion'
+import { forwardRef } from 'react'
 
-const PageContainer = styled.div`
+const Container = forwardRef((props, ref) => {
+    return <div ref={ref} {...props}></div>
+})
+
+const PageContainer = styled(motion(Container))`
     display: flex;
     flex-flow: column wrap;
     align-items: center;

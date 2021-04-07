@@ -32,7 +32,7 @@ StyledInput.Wrap = styled.div`
         isMobile &&
         css`
             width: 100%;
-        `}
+        `}  
 `
 
 StyledInput.Label = styled.label`

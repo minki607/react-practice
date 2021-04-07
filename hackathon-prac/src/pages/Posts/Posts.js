@@ -17,7 +17,6 @@ const Posts = () => {
             .orderBy('createdAt', 'desc')
             .onSnapshot((querySnapshot) => {
                 const _posts = []
-
                 querySnapshot.forEach((doc) => {
                     _posts.push({
                         id: doc.id,
